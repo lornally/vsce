@@ -1,0 +1,93 @@
+{
+  "name": "py4nb",
+  "displayName": "py4nb",
+  "description": "从ipynb提取python代码",
+  "publisher": "ironbeast",
+  "version": "0.0.9",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lornally/vsce.git"
+  },
+  "homepage": "isuyu.cn",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+ 
+      {
+        "command": "py4nb.export",
+        "title": "py4nb: Export Marked Cells to Python",
+        "category": "nb ex"
+      },
+      {
+        "command": "py4nb.formatPython",
+        "title": "py4nb: Format Python Code",
+        "category": "nb ex"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "py4nb.export",
+        "key": "ctrl+shift+e",
+        "mac": "ctrl+cmd+e",
+        "when": "resourceExtname == .ipynb"
+      },
+      {
+        "command": "py4nb.formatPython",
+        "key": "ctrl+shift+f",
+        "mac": "ctrl+tab",
+        "when": "editorLangId == python && editorHasSelection"
+      }
+    ],
+    "themes": [
+      {
+        "id": "notebook-py4nb-theme",
+        "label": "export彩虹关键字主题",
+        "path": "./themes/theme_exportpy.json",
+        "uiTheme": "vs-dark"
+      }
+    ],
+    "grammars": [
+      {
+        "path": "./syntaxes/python_syntax.json",
+        "scopeName": "source.python.export.injection",
+        "injectTo": [
+          "source.python"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "esbuild": "^0.25.1",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.2",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}

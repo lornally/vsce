@@ -1,0 +1,64 @@
+{
+  "scopeName": "source.python.export.injection",
+  "injectionSelector": "L:source.python",
+  "patterns": [
+    {
+      "match": "^\\s*(#) (,)(e)(x)(p)(o)(r)(t)( .*)?$",
+      "captures": {
+        "1": {
+          "name": "comment.line.export.1.python"
+        },
+        "2": {
+          "name": "comment.line.export.2.python"
+        },
+        "3": {
+          "name": "comment.line.export.3.python"
+        },
+        "4": {
+          "name": "comment.line.export.4.python"
+        },
+        "5": {
+          "name": "comment.line.export.5.python"
+        },
+        "6": {
+          "name": "comment.line.export.6.python"
+        },
+        "7": {
+          "name": "comment.line.export.7.python"
+        },
+        "8": {
+          "name": "comment.line.export.8.python"
+        },
+        "9": {
+          "name": "comment.line.export.9.python"
+        }
+      }
+    },
+    {
+      "match": "^\\s*(#) (,)(t)(e)(s)(t)( .*)?$",
+      "captures": {
+        "1": {
+          "name": "comment.line.test.1.python"
+        },
+        "2": {
+          "name": "comment.line.test.2.python"
+        },
+        "3": {
+          "name": "comment.line.test.3.python"
+        },
+        "4": {
+          "name": "comment.line.test.4.python"
+        },
+        "5": {
+          "name": "comment.line.test.5.python"
+        },
+        "6": {
+          "name": "comment.line.test.6.python"
+        },
+        "7": {
+          "name": "comment.line.test.7.python"
+        }
+      }
+    }
+  ]
+}

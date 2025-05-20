@@ -1,0 +1,119 @@
+{
+  "name": "Notebook Exporter Theme",
+  "type": "dark", 
+  "semanticHighlighting": true,
+  "tokenColors": [
+    {
+      "scope": "comment.line.export.1.python", 
+      "settings": {
+        "foreground": "#fb61b9",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.2.python", 
+      "settings": {
+        "foreground": "#fb61e9",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.3.python", 
+      "settings": {
+        "foreground": "#fb91f9",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.4.python", 
+      "settings": {
+        "foreground": "#fbc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.5.python", 
+      "settings": {
+        "foreground": "#dbc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.6.python", 
+      "settings": {
+        "foreground": "#cbc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.7.python", 
+      "settings": {
+        "foreground": "#abc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.export.8.python", 
+      "settings": {
+        "foreground": "#8bc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+     {
+      "scope": "comment.line.export.9.python", 
+      "settings": {
+        "foreground": "#abffff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.1.python", 
+      "settings": {
+        "foreground": "#fb61b9",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.2.python", 
+      "settings": {
+        "foreground": "#fb61e9",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.3.python", 
+      "settings": {
+        "foreground": "#fb91f9",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.4.python", 
+      "settings": {
+        "foreground": "#fbc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.5.python", 
+      "settings": {
+        "foreground": "#cbc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.6.python", 
+      "settings": {
+        "foreground": "#9bc1ff",
+        "fontStyle": "bold italic"
+      }
+    },
+    {
+      "scope": "comment.line.test.7.python", 
+      "settings": {
+        "foreground": "#abffff",
+        "fontStyle": "bold italic"
+      }
+    }
+  ]
+}

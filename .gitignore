@@ -172,3 +172,22 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# 我的
+zed-fonts
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+ayu-zed
+zed-fonts
+
+*.export*
+*处理后*
+*copy*
+
+*back*
+*test*
+*备用*
