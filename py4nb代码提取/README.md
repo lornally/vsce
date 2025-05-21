@@ -17,7 +17,7 @@
   * 输入 `py4nb` 选择命令: `export marked cells to python file`
 * 快捷键
   * 提取代码:
-  *"key": "ctrl+shift+e",
+  * "win": "ctrl+shift+e",
   * "mac": "ctrl+cmd+e",
 
 ## 语法高亮
