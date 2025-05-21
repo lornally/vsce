@@ -1,4 +1,4 @@
-# 2025-5-21 修改为默认导出, by m
+
 
 import json, sys, re
 from pathlib import Path
@@ -15,19 +15,26 @@ def exportpy(notebook_path):
         if not source:  # 空单元格跳过
             continue
         
-
+  
+        # 逐行检测, 检测到导出符号, 从下一行开始导出
+        export_started_for_cell = False
         cell_clean_lines = []
         for line_content in source: # 遍历单元格的每一行
             stripped_line = line_content.strip()
 
-            # 检查是否遇到 # ,test 标记，若是则停止导出该单元格后续内容
-            if re.match(r'^\s*# ,test( .*)?$', stripped_line):
-                break 
-            
-            # 跳过其他注释行
-            if not stripped_line.startswith('#'):
-                cell_clean_lines.append(line_content.rstrip('\n')) # 保留原始行（包括缩进）, 移除尾部回车, 因为组合的时候会加上. 不保留回车是因为最后一行会没有回车.
-       
+            if export_started_for_cell:
+                # 如果已经开始导出这个单元格的内容
+                # 检查是否遇到 # ,test 标记，若是则停止导出该单元格后续内容
+                if re.match(r'^\s*# ,test( .*)?$', stripped_line):
+                    break 
+                
+                # 跳过其他注释行
+                if not stripped_line.startswith('#'):
+                    cell_clean_lines.append(line_content.rstrip('\n')) # 保留原始行（包括缩进）, 移除尾部回车, 因为组合的时候会加上. 不保留回车是因为最后一行会没有回车.
+            else:
+                # 如果尚未开始导出，检查当前行是否为 # ,export 标记
+                if re.match(r'^\s*# ,export( .*)?$', stripped_line):
+                    export_started_for_cell = True # 从下一行开始导出
         
         if cell_clean_lines:
             exported_code.extend(cell_clean_lines)

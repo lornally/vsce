@@ -3,7 +3,7 @@
   "displayName": "py4nb",
   "description": "从ipynb提取python代码",
   "publisher": "ironbeast",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "icon": "favicon.png",
 
   "repository": {
