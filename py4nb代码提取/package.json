@@ -3,7 +3,7 @@
   "displayName": "py4nb",
   "description": "从ipynb提取python代码",
   "publisher": "ironbeast",
-  "version": "0.0.9",
+  "version": "0.1.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/lornally/vsce.git"

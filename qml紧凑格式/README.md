@@ -1,10 +1,14 @@
 # qmltight README
 
-格式化Qml为紧凑格式
+格式化Qml为紧凑格式, QML作为界面描述格式, 理应更紧凑一些.
 
 ## Features
-
-QML作为界面描述格式, 理应更紧凑一些.
+可以命令面板调用或者者快捷键调用.
+* 快捷键:
+    * "win": "ctrl+alt+t",
+    * "mac": "ctrl+tab",
+* 命令面板: 
+  * qmltight: tight the qml
 
 ## Requirements
 * 为了和系统的快捷键不冲突, 因此有2个妥协
@@ -28,13 +32,14 @@ QML作为界面描述格式, 理应更紧凑一些.
 
 ```
 
+
 ## Extension Settings
 
 无
 
 ## Known Issues
 * 不处理正则, 因此正则有注释符号或者字符串符号, 就会导致整体解析出错, 结果就不是预期结果.
-
+* 因为这个原因,tight之后的文件会单独存放, 本插件并不会修改用户现有的原文件.
 
 ## Release Notes
 

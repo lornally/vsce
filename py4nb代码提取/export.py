@@ -30,7 +30,7 @@ def exportpy(notebook_path):
                 
                 # 跳过其他注释行
                 if not stripped_line.startswith('#'):
-                    cell_clean_lines.append(line_content) # 保留原始行（包括缩进）
+                    cell_clean_lines.append(line_content.rstrip('\n')) # 保留原始行（包括缩进）, 移除尾部回车, 因为组合的时候会加上. 不保留回车是因为最后一行会没有回车.
             else:
                 # 如果尚未开始导出，检查当前行是否为 # ,export 标记
                 if re.match(r'^\s*# ,export( .*)?$', stripped_line):
