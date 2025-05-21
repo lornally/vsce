@@ -1,9 +1,8 @@
 # Change Log
 
-All notable changes to the "qmltight" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 发布到市场的版本
+- 0.0.6 第一个发布到市场的版本, 带图标
 
 ## [Unreleased]
 
-- Initial release
+- 0.0.4 初始版本

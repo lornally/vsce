@@ -2,7 +2,9 @@
 "name": "sta-py-code",
 "displayName": "sta-py-code",
 "description": "statistics python code, Count effective characters, lines, and words, and comment.",
-"version": "0.0.2",
+"version": "0.0.3",
+  "icon": "favicon.png",
+
 "repository": {
   "type": "git",
   "url": "https://github.com/lornally/vsce.git"
