@@ -21,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
   const tightCommand = vscode.commands.registerCommand(
     'qmltight.tight',
     async () => {
-      vscode.window.showInformationMessage('tight from qmltight!');
+      vscode.window.showInformationMessage('tighting from qmltight...');
       const editor = vscode.window.activeTextEditor;
       if (!editor ||
         editor.document.languageId !== 'qml' ||
@@ -41,7 +41,7 @@ export function activate(context: vscode.ExtensionContext) {
           console.error('STDERR:', stderr);     // 输出标准错误流
         } else {
           const count = stdout.trim();
-          vscode.window.showInformationMessage(`qml紧凑成功... ${count} `);
+          vscode.window.showInformationMessage(`qml紧凑成功: ${count} `);
         }
       });
 

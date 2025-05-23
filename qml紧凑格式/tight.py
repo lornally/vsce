@@ -548,8 +548,8 @@ def deal(content):
 
 
 
-
-from datetime import datetime
+import os
+# from datetime import datetime
 def formatpy(filepath):
     
   with open(filepath, 'r', encoding='utf-8') as f:
@@ -557,15 +557,18 @@ def formatpy(filepath):
     sacomm_result = deal(content)
     # print("最终处理结果==================:\n", sacomm_result)
     # 在原本的文件旁边存放一个处理后的文件
-    with open( f'{filepath}处理后{datetime.now().strftime("%d日%H:%M:%S")}.qml', 'w', encoding='utf-8') as f2:
+    # with open( f'{filepath}处理后{datetime.now().strftime("%d日%H:%M:%S")}.qml', 'w', encoding='utf-8') as f2:
+    # 改为覆盖原文件
+    with open( filepath, 'w', encoding='utf-8') as f2:
+
       f2.write(sacomm_result)
-      print('处理完成, 结果存放在:', filepath.replace('.qml', '_处理后日时分秒.qml'))
+      print(os.path.basename(filepath))
 
 import sys
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         file_path = sys.argv[1]
         count = formatpy(file_path)
-        print(count, file_path, "=====")
+        # print(count, file_path, "=====")
     else:
         print("======No file path provided.======")
