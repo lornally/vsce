@@ -33,7 +33,7 @@
       {
         "command": "qmltight.tight",
         "key": "ctrl+alt+t",
-        "mac": "ctrl+tab",
+        "mac": "ctrl+alt+tab",
         "when": "editorLangId == qml && editorHasSelection"
       }
     ]

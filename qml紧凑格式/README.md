@@ -6,7 +6,7 @@
 可以命令面板调用或者者快捷键调用.
 * 快捷键:
     * "win": "ctrl+alt+t",
-    * "mac": "ctrl+tab",
+    * "mac": "ctrl+option+tab",
 * 命令面板: 
   * qmltight: tight the qml
 
