@@ -1,8 +1,6 @@
 {
   "scopeName": "source.ye",
-  "patterns": [
-    {
+  "patterns": [{
       "include": "text.html.markdown"
-    }
-  ]
+    }]
 }

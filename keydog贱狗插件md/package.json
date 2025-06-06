@@ -17,31 +17,23 @@
 
   "main": "./dist/extension.js",
   "contributes": {
-    "languages": [
-      {
+    "languages": [{
         "id": "ye",
-        "aliases": [
-          "YE",
-          "ye"
-        ],
-        "extensions": [
-          ".ye"
-        ],
-        "configuration": "./language-configuration.json",
-        "filenames": ["*.ye"] 
-      }
-    ],
-    "grammars": [
-      {
+        "aliases": ["YE","ye"],
+        "extensions": [".ye"],
+        "configuration": "./language-configuration.json"
+      }],
+    "grammars": [{
         "language": "ye",
         "scopeName": "source.ye",
         "path": "./syntaxes/ye.tmLanguage.json"
-      }
-    ],
+      }],
     "commands": [
       {
         "command": "ye.splitEditor",
-        "title": "分栏编辑YE文件"
+        "title": "分栏编辑YE文件",
+                "category": "YE"
+
       }
     ],
     "menus": {

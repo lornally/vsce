@@ -14,5 +14,15 @@
 		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
 		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
 		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
-	}
+	},
+   "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "调试/**/*",
+    "src参考代码/**/*",
+    "测试用例/**/*",
+    "node_modules/**/*",
+    "dist/**/*"
+  ]
 }
