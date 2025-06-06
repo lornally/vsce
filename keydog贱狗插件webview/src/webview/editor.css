@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1e1e1e;  /* 添加：暗色背景 */
+    color: #d4d4d4;             /* 添加：白色文字 */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.editor-pane {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+        border-right: 1px solid #444;  /* 改为：暗色边框 */
+
+}
+
+.editor-pane:last-child {
+    border-right: none;
+}
+
+.header {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #cccccc;             /* 改为：浅色标题 */
+}
+textarea {
+    flex: 1;
+    border: 1px solid #444;     /* 改为：暗色边框 */
+    border-radius: 4px;
+    padding: 10px;
+    font-family: monospace;
+    resize: none;
+    background-color: #252526;  /* 添加：暗色输入框背景 */
+    color: #d4d4d4;            /* 添加：白色文字 */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #0078d4;      /* 添加：蓝色聚焦边框 */
+    box-shadow: 0 0 0 1px #0078d4;
+}

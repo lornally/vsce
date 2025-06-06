@@ -1,0 +1,107 @@
+{
+    "name": "YE",
+    "scopeName": "source.ye",
+    "patterns": [
+        {
+            "include": "#heading"
+        },
+        {
+            "include": "#list"
+        },
+        {
+            "include": "#separator"
+        },
+        {
+            "include": "#emphasis"
+        }
+    ],
+    "repository": {
+        "heading": {
+            "patterns": [
+                {
+                    "name": "markup.heading.1.ye",
+                    "match": "^(#{1})\\s+(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.heading.ye"
+                        },
+                        "2": {
+                            "name": "entity.name.section.ye"
+                        }
+                    }
+                },
+                {
+                    "name": "markup.heading.2.ye",
+                    "match": "^(#{2})\\s+(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.heading.ye"
+                        },
+                        "2": {
+                            "name": "entity.name.section.ye"
+                        }
+                    }
+                }
+            ]
+        },
+        "separator": {
+            "name": "markup.bold.ye",
+            "match": "-----.*-----",
+            "captures": {
+                "0": {
+                    "name": "markup.bold.ye"
+                }
+            }
+        },
+        "list": {
+            "patterns": [
+                {
+                    "name": "markup.list.unnumbered.ye",
+                    "match": "^\\s*([*+-])\\s+(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.list_item.ye"
+                        },
+                        "2": {
+                            "name": "markup.list.unnumbered.ye"
+                        }
+                    }
+                },
+                {
+                    "name": "markup.list.numbered.ye",
+                    "match": "^\\s*(\\d+\\.)\\s+(.*)$",
+                    "captures": {
+                        "1": {
+                            "name": "punctuation.definition.list_item.ye"
+                        },
+                        "2": {
+                            "name": "markup.list.numbered.ye"
+                        }
+                    }
+                }
+            ]
+        },
+        "emphasis": {
+            "patterns": [
+                {
+                    "name": "markup.bold.ye",
+                    "match": "\\*\\*([^*]+)\\*\\*",
+                    "captures": {
+                        "0": {
+                            "name": "markup.bold.ye"
+                        }
+                    }
+                },
+                {
+                    "name": "markup.italic.ye",
+                    "match": "\\*([^*]+)\\*",
+                    "captures": {
+                        "0": {
+                            "name": "markup.italic.ye"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

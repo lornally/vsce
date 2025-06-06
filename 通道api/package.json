@@ -1,0 +1,8 @@
+{
+     "name": "output-test",
+     "publisher": "test",
+     "version": "0.0.1",
+     "engines": {"vscode": "^1.89.0"},
+     "activationEvents": ["*"],
+     "main": "./extension.js"
+   }

@@ -1,6 +1,10 @@
 
 * todo
   * 可能行尾的注释和正文之间需要一个空格. 待观察.
+
+###### 0605
+* 新建项目, 解析.ye文件, 他是我的keydog文件.
+* 
 ###### 0529
 * 放弃qml, 也就放弃qmltight这个项目.
 
@@ -203,7 +207,7 @@
 # 准备一下代理环境不然容易安装失败
 
 # 直接安装一堆问题, 建议python虚拟环境进行隔离
-python -m venv .venv && source .venv/bin/activate
+python -m venv .vscevenv && source .vscevenv/bin/activate
 
 # 全局安装一堆问题, 建议去掉-g, 改为本地安装
 pnpm install yo generator-code

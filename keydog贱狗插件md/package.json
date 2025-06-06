@@ -1,0 +1,65 @@
+{
+  "name": "ye-editor",
+  "displayName": "keydog",
+  "description": "keydog贱狗脑图",
+  "version": "1.0.0",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+   "activationEvents": [
+    "onStartupFinished"
+  ],
+
+  "categories": [
+    "Other"
+  ],
+
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "ye",
+        "aliases": [
+          "YE",
+          "ye"
+        ],
+        "extensions": [
+          ".ye"
+        ],
+        "configuration": "./language-configuration.json",
+        "filenames": ["*.ye"] 
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ye",
+        "scopeName": "source.ye",
+        "path": "./syntaxes/ye.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "ye.splitEditor",
+        "title": "分栏编辑YE文件"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "ye.splitEditor",
+          "group": "navigation",
+          "when": "resourceLangId == ye"
+        }
+      ]
+    }
+  },
+ "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "lint": "eslint . --ext .ts",
+    "pretest": "pnpm run compile",
+    "test": "node ./out/test/runTest.js"
+  }
+
+}
