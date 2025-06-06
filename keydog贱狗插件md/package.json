@@ -28,14 +28,7 @@
         "scopeName": "source.ye",
         "path": "./syntaxes/ye.tmLanguage.json"
       }],
-    "commands": [
-      {
-        "command": "ye.splitEditor",
-        "title": "分栏编辑YE文件",
-                "category": "YE"
-
-      }
-    ],
+ 
     "menus": {
       "editor/title": [
         {
