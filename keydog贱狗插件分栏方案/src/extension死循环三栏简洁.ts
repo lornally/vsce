@@ -2,7 +2,6 @@ import * as vscode from 'vscode';
 const LEFT_MARKER = '# -----昭-----';   // 改为您的格式
 // 声明输出通道引用（不初始化）
 let outputChannel: vscode.OutputChannel;
-
 // 声明日志函数（延迟初始化）
 let odog: (msg: string) => void;
 
