@@ -1,0 +1,44 @@
+---
+scopeName: source.tea
+fileTypes:
+  - tea
+patterns:
+  - name: comment.line.double-slash.tea
+    match: "//.*"
+  - name: comment.block.tea
+    begin: "/\\*"
+    end: "\\*/"
+  - name: keyword.control.tea
+    match: "\\b(if|else|for|while|return|end|do|def|class)\\b"
+  - name: string.quoted.double.tea
+    begin: "\""
+    end: "\""
+  - name: string.quoted.single.tea
+    begin: "'"
+    end: "'"
+  - name: constant.numeric.tea
+    match: "\\b\\d+(\\.\\d+)?\\b"
+  - name: variable.tea
+    match: "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+  - name: entity.name.tag.pug
+    match: "^\\s*[a-zA-Z0-9_-]+"
+  - name: entity.other.attribute-name.pug
+    match: "\\b[a-zA-Z0-9_-]+(?=\\=)"
+  - name: string.unquoted.attribute-value.pug
+    match: "(?<=\\=)[^\\s'"]+"
+  - name: string.quoted.attribute-value.pug
+    begin: "\""
+    end: "\""
+  - name: string.quoted.attribute-value.pug
+    begin: "'"
+    end: "'"
+  - name: constant.language.boolean.yaml
+    match: "\\b(true|false|null)\\b"
+  - name: constant.numeric.yaml
+    match: "\\b\\d+(\\.\\d+)?\\b"
+  - name: entity.name.tag.yaml
+    match: "^[a-zA-Z0-9_-]+(?=:)"
+  - name: string.unquoted.yaml
+    match: "(?<=: )[^"]+"
+repository: {}
+uuid: b6e8a7c0-5d3b-11e0-84e1-0800200c9a66

@@ -1,0 +1,26 @@
+{
+
+  "line_endings": {
+      "level": "error"
+  },
+  
+  "max_line_length": {
+      "value": "100"
+  },
+  "cyclomatic_complexity": {
+      "value": 11,
+      "level": "warn"
+  },
+  "no_debugger": {
+      "level": "error",
+      "console": true
+  },
+
+  "no_unnecessary_double_quotes": {
+      "level": "error"
+  },
+
+  "eol_last": {
+      "level": "error"
+  }
+}

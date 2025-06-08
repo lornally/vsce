@@ -1,0 +1,50 @@
+name: origin
+displayName: 原始插件
+description: 插件的最原始状态
+version: 0.0.1
+engines:
+  vscode: ^1.99.0
+categories:
+  - Other
+activationEvents:
+  - onLanguage:tea
+main: ./dist/extension.js
+contributes:
+  languages:
+    - id: tea
+      aliases: 
+        - Tea
+        - tea
+        - teascript
+        - tealang
+      extensions: 
+        - .tea
+      configuration: ./language-configuration.json
+  grammars:
+    - language: tea
+      scopeName: source.tea
+      path: ./syntaxes/tea.tmLanguage.yaml
+scripts:
+  vscode:prepublish: pnpm run package
+  compile: pnpm run check-types && pnpm run lint && node esbuild.js
+  watch: npm-run-all -p watch:*
+  watch:esbuild: node esbuild.js --watch
+  watch:tsc: tsc --noEmit --watch --project tsconfig.json
+  compile-tests: tsc -p . --outDir out
+  watch-tests: tsc -p . -w --outDir out
+  pretest: pnpm run compile-tests && pnpm run compile && pnpm run lint
+  check-types: tsc --noEmit
+  lint: eslint src
+  test: vscode-test
+  package: pnpm run check-types && pnpm run lint && node esbuild.js --production
+devDependencies:
+  "@types/vscode": ^1.99.0
+  "@types/node": 20.x
+  "@typescript-eslint/eslint-plugin": ^8.28.0
+  "@typescript-eslint/parser": ^8.28.0
+  eslint: ^9.23.0
+  esbuild: ^0.25.1
+  npm-run-all: ^4.1.5
+  typescript: ^5.8.2
+  "@vscode/test-cli": ^0.0.10
+  "@vscode/test-electron": ^2.4.1

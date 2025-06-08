@@ -1,0 +1,10 @@
+zed-fonts
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+ayu-zed
+
+*.export*
+*处理后*
