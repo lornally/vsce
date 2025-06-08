@@ -91,6 +91,25 @@ async function openEditor(filePath: string, viewColumn: vscode.ViewColumn) {
     }
 }
 
+async function closeEditor(uri: vscode.Uri) {
+    const editor = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === uri.toString());
+    if (editor) {
+        try {
+            // 直接关闭编辑器
+            await vscode.window.showTextDocument(editor.document, {
+                viewColumn: editor.viewColumn,
+                preserveFocus: false
+            });
+            await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
+            odog(`已关闭编辑器: ${path.basename(uri.fsPath)}`);
+        } catch (error) {
+            odog(`关闭编辑器失败: ${path.basename(uri.fsPath)} - ${error}`);
+        }
+    } else {
+        odog(`编辑器未找到: ${path.basename(uri.fsPath)}`);
+    }
+}
+
 function setupCloseHandler(fileId: string) {
     const session = activeFiles.get(fileId);
     if (!session) return;
@@ -142,24 +161,5 @@ function saveOriginalFile(fileId: string, session: { leftPath: string; rightPath
     } catch (error) {
         odog(`保存原始文件失败: ${error}`);
         vscode.window.showErrorMessage(`保存失败: ${error}`);
-    }
-}
-
-async function closeEditor(uri: vscode.Uri) {
-    const editor = vscode.window.visibleTextEditors.find(e => e.document.uri.toString() === uri.toString());
-    if (editor) {
-        try {
-            // 直接关闭编辑器
-            await vscode.window.showTextDocument(editor.document, {
-                viewColumn: editor.viewColumn,
-                preserveFocus: false
-            });
-            await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
-            odog(`已关闭编辑器: ${path.basename(uri.fsPath)}`);
-        } catch (error) {
-            odog(`关闭编辑器失败: ${path.basename(uri.fsPath)} - ${error}`);
-        }
-    } else {
-        odog(`编辑器未找到: ${path.basename(uri.fsPath)}`);
     }
 }
