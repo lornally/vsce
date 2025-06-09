@@ -1,0 +1,54 @@
+2025-06-06 11:16:54.276 [info] Extension host with pid 51215 started
+2025-06-06 11:16:54.276 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-06 11:16:54.284 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-06 11:16:54.302 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-06 11:16:54.314 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-06 11:16:54.926 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-06 11:16:54.934 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-06 11:16:54.967 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-06 11:16:55.190 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:16:55.194 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-06 11:16:55.199 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-06 11:16:55.233 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-06 11:16:55.298 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:16:55.298 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:16:55.308 [info] Eager extensions activated
+2025-06-06 11:16:55.315 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:16:55.316 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:16:55.329 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:16:55.335 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:16:55.658 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:16:56.004 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:16:57.756 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onLanguage:ye'
+2025-06-06 11:16:57.759 [info] Extension 'your-name.ye-editor' uses a document selector without scheme. Learn more about this: https://go.microsoft.com/fwlink/?linkid=872305
+2025-06-06 11:21:53.547 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-06 11:21:53.571 [error] Error: Channel has been closed
+    at s (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2431)
+    at Object.appendLine (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2570)
+    at Function.log (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:960:35763)
+    at Object.jIc (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:4144:1690)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 13)
+    at PJ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:9888)
+2025-06-06 11:21:53.572 [info] Extension host with pid 51215 exiting with code 0
+2025-06-06 11:21:55.375 [info] Extension host with pid 51321 started
+2025-06-06 11:21:55.375 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-06 11:21:55.385 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-06 11:21:55.401 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-06 11:21:55.412 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-06 11:21:56.005 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-06 11:21:56.011 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-06 11:21:56.044 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-06 11:21:56.269 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:21:56.275 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-06 11:21:56.281 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-06 11:21:56.311 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-06 11:21:56.401 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:21:56.401 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-06 11:21:56.409 [info] Eager extensions activated
+2025-06-06 11:21:56.428 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:21:56.430 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:21:56.441 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:21:56.444 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:21:56.755 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-06 11:21:57.012 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.

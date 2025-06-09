@@ -1,0 +1,67 @@
+{
+  "name": "ye-editor",
+  "displayName": "keydog",
+  "description": "keydog贱狗脑图",
+  "version": "1.0.0",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.78.0"
+  },
+   "activationEvents": [
+    "onStartupFinished"
+  ],
+
+  "categories": [
+    "Other"
+  ],
+
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [{
+        "id": "ye",
+        "aliases": ["YE","ye"],
+        "extensions": [".ye"],
+        "configuration": "./language-configuration.json"
+      }],
+    "grammars": [{
+        "language": "ye",
+        "scopeName": "source.ye",
+        "path": "./syntaxes/ye.tmLanguage.json"
+      }],
+       "commands": [{
+        "command": "vscode.open",
+        "title": "贱狗-ye!"
+    }]
+ 
+   
+  },
+
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "pnpm run check-types && pnpm run lint && node esbuild.js --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "esbuild": "^0.25.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+
+}

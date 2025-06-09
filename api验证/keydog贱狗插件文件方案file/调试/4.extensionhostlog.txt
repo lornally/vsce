@@ -1,0 +1,447 @@
+2025-06-07 17:21:54.519 [info] Extension host with pid 80210 started
+2025-06-07 17:21:54.519 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-07 17:21:54.526 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-07 17:21:54.543 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:21:54.554 [info] ExtensionService#_doActivateExtension DSAI.dsai-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:21:55.000 [info] ExtensionService#_doActivateExtension RooVeterinaryInc.roo-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:21:55.552 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:21:56.148 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:21:56.159 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:21:56.220 [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:21:56.298 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:21:56.305 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:21:56.338 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:21:56.407 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:21:56.436 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-07 17:21:56.456 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.456 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.456 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.456 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.457 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.460 [info] ExtensionService#_doActivateExtension bierner.markdown-mermaid, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:21:56.464 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-07 17:21:56.494 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-07 17:21:56.580 [warning] [yzhang.markdown-all-in-one] Accessing a window scoped configuration for a resource is not expected. To associate 'markdown.extension.katex.macros' to a resource, define its scope to 'resource' in configuration contributions in 'package.json'.
+2025-06-07 17:21:56.638 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.652 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.652 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:56.661 [info] Eager extensions activated
+2025-06-07 17:21:56.669 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:21:56.676 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:21:56.688 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:21:56.694 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:21:57.022 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:21:57.236 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:21:57.305 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:21:57.409 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:22:00.058 [error] RangeError: toString() radix argument must be between 2 and 36
+    at Number.toString (<anonymous>)
+    at processYeFile (/Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:50:54)
+    at /Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:30:27
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:170:29185)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.C (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2443)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2660)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:145:104347)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at vy.acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:11626)
+    at vy.$acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:10211)
+    at f5.S (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116111)
+    at f5.Q (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:115891)
+    at f5.M (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114980)
+    at f5.L (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114085)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:112882)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:3917)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at MessagePortMain.<anonymous> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:2209)
+    at MessagePortMain.emit (node:events:524:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+2025-06-07 17:22:04.373 [error] RangeError: toString() radix argument must be between 2 and 36
+    at Number.toString (<anonymous>)
+    at processYeFile (/Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:50:54)
+    at /Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:30:27
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:170:29185)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.C (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2443)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2660)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:145:104347)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at vy.acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:11626)
+    at vy.$acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:10211)
+    at f5.S (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116111)
+    at f5.Q (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:115891)
+    at f5.M (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114980)
+    at f5.L (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114085)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:112882)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:3917)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at MessagePortMain.<anonymous> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:2209)
+    at MessagePortMain.emit (node:events:524:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+2025-06-07 17:22:18.103 [error] RangeError: toString() radix argument must be between 2 and 36
+    at Number.toString (<anonymous>)
+    at processYeFile (/Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:50:54)
+    at /Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:30:27
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:170:29185)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.C (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2443)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2660)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:145:104347)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at vy.acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:11626)
+    at vy.$acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:10211)
+    at f5.S (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116111)
+    at f5.Q (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:115891)
+    at f5.M (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114980)
+    at f5.L (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114085)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:112882)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:3917)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at MessagePortMain.<anonymous> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:2209)
+    at MessagePortMain.emit (node:events:524:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+2025-06-07 17:22:26.647 [error] RangeError: toString() radix argument must be between 2 and 36
+    at Number.toString (<anonymous>)
+    at processYeFile (/Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:50:54)
+    at /Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:30:27
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:170:29185)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.C (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2443)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2660)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:145:104347)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at vy.acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:11626)
+    at vy.$acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:10211)
+    at f5.S (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116111)
+    at f5.Q (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:115891)
+    at f5.M (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114980)
+    at f5.L (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114085)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:112882)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:3917)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at MessagePortMain.<anonymous> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:2209)
+    at MessagePortMain.emit (node:events:524:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+2025-06-07 17:22:29.334 [error] RangeError: toString() radix argument must be between 2 and 36
+    at Number.toString (<anonymous>)
+    at processYeFile (/Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:50:54)
+    at /Users/bergman/my2024/X/vsce插件项目/keydog贱狗插件文件方案file/src/extension.ts:30:27
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:170:29185)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.C (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2443)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2660)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:145:104347)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at vy.acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:11626)
+    at vy.$acceptDocumentsAndEditorsDelta (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:126:10211)
+    at f5.S (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116111)
+    at f5.Q (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:115891)
+    at f5.M (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114980)
+    at f5.L (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:114085)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:112882)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at ed.value (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:3917)
+    at P.B (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at lo.fire (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:9458)
+    at MessagePortMain.<anonymous> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:225:2209)
+    at MessagePortMain.emit (node:events:524:28)
+    at Object.MessagePortMain._internalPort.emit (node:electron/js2c/utility_init:2:2949)
+    at Object.callbackTrampoline (node:internal/async_hooks:130:17)
+2025-06-07 17:29:00.660 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-07 17:29:00.710 [error] Error: Channel has been closed
+    at s (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2431)
+    at Object.appendLine (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2570)
+    at Function.log (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:960:35763)
+    at Object.jIc (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:4144:1690)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 19)
+    at PJ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:9888)
+2025-06-07 17:29:00.711 [error] Canceled: Canceled
+    at new XN (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111538)
+    at f5.U (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116148)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113642)
+    at P8.setValue (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14268)
+    at file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14892
+    at Ss.a (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:15010)
+    at Ss.h (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74911)
+    at Ss.g (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74895)
+    at Timeout.a [as _onTimeout] (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:953:9428)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7)
+2025-06-07 17:29:00.711 [info] Extension host with pid 80210 exiting with code 0
+2025-06-07 17:29:02.478 [info] Extension host with pid 80457 started
+2025-06-07 17:29:02.478 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-07 17:29:02.486 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-07 17:29:02.501 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:29:02.512 [info] ExtensionService#_doActivateExtension DSAI.dsai-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:29:02.951 [info] ExtensionService#_doActivateExtension RooVeterinaryInc.roo-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:29:03.489 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:29:04.100 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onLanguage:ye'
+2025-06-07 17:29:04.102 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:29:04.107 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:29:04.144 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:29:04.225 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-07 17:29:04.244 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-07 17:29:04.274 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-07 17:29:04.385 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:04.385 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:04.395 [info] Eager extensions activated
+2025-06-07 17:29:04.402 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:29:04.403 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:29:04.415 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:29:04.418 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:29:04.732 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:29:05.002 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:05.094 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:09.743 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:29:09.755 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:29:09.812 [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:29:09.900 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:29:09.921 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:09.922 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:09.922 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:09.922 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:09.922 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:29:09.980 [info] ExtensionService#_doActivateExtension bierner.markdown-mermaid, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:29:10.029 [warning] [yzhang.markdown-all-in-one] Accessing a window scoped configuration for a resource is not expected. To associate 'markdown.extension.katex.macros' to a resource, define its scope to 'resource' in configuration contributions in 'package.json'.
+2025-06-07 17:29:10.103 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:28.563 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-07 17:33:28.609 [error] Error: Channel has been closed
+    at s (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2431)
+    at Object.appendLine (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2570)
+    at Function.log (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:960:35763)
+    at Object.jIc (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:4144:1690)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 19)
+    at PJ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:9888)
+2025-06-07 17:33:28.610 [error] Canceled: Canceled
+    at new XN (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111538)
+    at f5.U (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116148)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113642)
+    at P8.setValue (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14268)
+    at file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14892
+    at Ss.a (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:15010)
+    at Ss.h (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74911)
+    at Ss.g (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74895)
+    at Timeout.a [as _onTimeout] (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:953:9428)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7)
+2025-06-07 17:33:28.610 [info] Extension host with pid 80457 exiting with code 0
+2025-06-07 17:33:30.453 [info] Extension host with pid 80609 started
+2025-06-07 17:33:30.453 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-07 17:33:30.461 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-07 17:33:30.476 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:33:30.487 [info] ExtensionService#_doActivateExtension DSAI.dsai-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:33:30.929 [info] ExtensionService#_doActivateExtension RooVeterinaryInc.roo-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:33:31.485 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:33:32.092 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:33:32.102 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:33:32.165 [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:33:32.244 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:33:32.249 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:33:32.280 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:33:32.355 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:33:32.376 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-07 17:33:32.395 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.395 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.395 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.395 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.395 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.403 [info] ExtensionService#_doActivateExtension bierner.markdown-mermaid, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:33:32.407 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-07 17:33:32.436 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-07 17:33:32.501 [warning] [yzhang.markdown-all-in-one] Accessing a window scoped configuration for a resource is not expected. To associate 'markdown.extension.katex.macros' to a resource, define its scope to 'resource' in configuration contributions in 'package.json'.
+2025-06-07 17:33:32.571 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.588 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.588 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:32.595 [info] Eager extensions activated
+2025-06-07 17:33:32.614 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:33:32.615 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:33:32.627 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:33:32.630 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:33:32.958 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:33:33.165 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:33:33.250 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:33:33.362 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:11.872 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-07 17:52:11.896 [error] Error: Channel has been closed
+    at s (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2431)
+    at Object.appendLine (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2570)
+    at Function.log (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:960:35763)
+    at Object.jIc (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:4144:1690)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 19)
+    at PJ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:9888)
+2025-06-07 17:52:11.898 [error] Canceled: Canceled
+    at new XN (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111538)
+    at f5.U (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116148)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113642)
+    at P8.setValue (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14268)
+    at file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14892
+    at Ss.a (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:15010)
+    at Ss.h (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74911)
+    at Ss.g (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74895)
+    at Timeout.a [as _onTimeout] (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:953:9428)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7)
+2025-06-07 17:52:11.898 [info] Extension host with pid 80609 exiting with code 0
+2025-06-07 17:52:13.734 [info] Extension host with pid 81022 started
+2025-06-07 17:52:13.734 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-07 17:52:13.742 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-07 17:52:13.758 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:52:13.771 [info] ExtensionService#_doActivateExtension DSAI.dsai-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:52:14.217 [info] ExtensionService#_doActivateExtension RooVeterinaryInc.roo-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:52:14.755 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-07 17:52:15.348 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:52:15.359 [info] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:52:15.423 [info] ExtensionService#_doActivateExtension yzhang.markdown-all-in-one, startup: false, activationEvent: 'onLanguage:markdown'
+2025-06-07 17:52:15.498 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:52:15.504 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:52:15.535 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 17:52:15.600 [info] ExtensionService#_doActivateExtension vscode.markdown-math, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:52:15.633 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-07 17:52:15.646 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.647 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.647 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.647 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.647 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.650 [info] ExtensionService#_doActivateExtension bierner.markdown-mermaid, startup: false, activationEvent: 'api', root cause: yzhang.markdown-all-in-one
+2025-06-07 17:52:15.651 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-07 17:52:15.680 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-07 17:52:15.766 [warning] [yzhang.markdown-all-in-one] Accessing a window scoped configuration for a resource is not expected. To associate 'markdown.extension.katex.macros' to a resource, define its scope to 'resource' in configuration contributions in 'package.json'.
+2025-06-07 17:52:15.823 [warning] [vscode.markdown-math] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'markdown.math.macros', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.832 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.832 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:15.839 [info] Eager extensions activated
+2025-06-07 17:52:15.849 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:52:15.857 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:52:15.868 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:52:15.871 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:52:16.194 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:52:16.402 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 17:52:16.461 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 17:52:16.561 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:03:07.805 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-07 19:03:07.866 [error] Error: Channel has been closed
+    at s (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2431)
+    at Object.appendLine (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2570)
+    at Function.log (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:960:35763)
+    at Object.jIc (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:4144:1690)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 19)
+    at PJ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:9888)
+2025-06-07 19:03:07.868 [error] Canceled: Canceled
+    at new XN (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111538)
+    at f5.U (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116148)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113642)
+    at P8.setValue (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14268)
+    at file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14892
+    at Ss.a (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:15010)
+    at Ss.h (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74911)
+    at Ss.g (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74895)
+    at Timeout.a [as _onTimeout] (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:953:9428)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7)
+2025-06-07 19:03:07.868 [info] Extension host with pid 81022 exiting with code 0
+2025-06-07 19:03:09.621 [info] Extension host with pid 81603 started
+2025-06-07 19:03:09.621 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-07 19:03:09.631 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-07 19:03:09.648 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:03:09.660 [info] ExtensionService#_doActivateExtension DSAI.dsai-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:03:10.112 [info] ExtensionService#_doActivateExtension RooVeterinaryInc.roo-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:03:10.654 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:03:11.247 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 19:03:11.254 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 19:03:11.298 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 19:03:11.380 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-07 19:03:11.410 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-07 19:03:11.441 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-07 19:03:11.534 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:03:11.534 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:03:11.544 [info] Eager extensions activated
+2025-06-07 19:03:11.554 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:03:11.556 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:03:11.567 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:03:11.573 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:03:11.882 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:03:12.094 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:03:12.158 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:03:12.255 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:04:06.278 [info] Extension host terminating: renderer closed the MessagePort
+2025-06-07 19:04:06.317 [error] Error: Channel has been closed
+    at s (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2431)
+    at Object.appendLine (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:125:2570)
+    at Function.log (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:960:35763)
+    at Object.jIc (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:4144:1690)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 15)
+    at PJ.$ (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:123:9888)
+2025-06-07 19:04:06.318 [error] Canceled: Canceled
+    at new XN (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:111538)
+    at f5.U (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:116148)
+    at Proxy.s.<computed>.n.charCodeAt.s.<computed> (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:29:113642)
+    at P8.setValue (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14268)
+    at file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:14892
+    at Ss.a (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:119:15010)
+    at Ss.h (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74911)
+    at Ss.g (file:///Applications/Visual%20Studio%20Code.app/Contents/Resources/app/out/vs/workbench/api/node/extensionHostProcess.js:28:74895)
+    at Timeout.a [as _onTimeout] (/Users/bergman/.vscode/extensions/saoudrizwan.claude-dev-3.17.11/dist/extension.js:953:9428)
+    at listOnTimeout (node:internal/timers:581:17)
+    at processTimers (node:internal/timers:519:7)
+2025-06-07 19:04:06.318 [info] Extension host with pid 81603 exiting with code 0
+2025-06-07 19:04:08.134 [info] Extension host with pid 81683 started
+2025-06-07 19:04:08.134 [info] Skipping acquiring lock for /Users/bergman/Library/Application Support/Code/User/workspaceStorage/14ef3d7eab84656ba87c3000c2b34752.
+2025-06-07 19:04:08.159 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-06-07 19:04:08.176 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:04:08.188 [info] ExtensionService#_doActivateExtension DSAI.dsai-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:04:08.624 [info] ExtensionService#_doActivateExtension RooVeterinaryInc.roo-cline, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:04:09.169 [info] ExtensionService#_doActivateExtension saoudrizwan.claude-dev, startup: false, activationEvent: 'onLanguage'
+2025-06-07 19:04:09.764 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 19:04:09.770 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 19:04:09.803 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2025-06-07 19:04:09.880 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2025-06-07 19:04:09.901 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2025-06-07 19:04:09.929 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-06-07 19:04:10.025 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.openRepositoryInParentFolders', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:04:10.025 [warning] [vscode.git] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'git.showProgress', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:04:10.034 [info] Eager extensions activated
+2025-06-07 19:04:10.045 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:04:10.046 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:04:10.057 [info] ExtensionService#_doActivateExtension aaron-bond.better-comments, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:04:10.060 [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:04:10.371 [info] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:04:10.590 [info] ExtensionService#_doActivateExtension your-name.ye-editor, startup: false, activationEvent: 'onStartupFinished'
+2025-06-07 19:04:10.644 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
+2025-06-07 19:04:10.740 [warning] Accessing a resource scoped configuration without providing a resource is not expected. To get the effective value for 'files.watcherExclude', provide the URI of a resource or 'null' for any resource.
