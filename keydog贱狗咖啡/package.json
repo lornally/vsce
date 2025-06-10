@@ -1,0 +1,37 @@
+{
+  "name": "cofee",
+  "displayName": "cofee",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cofee.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "coffee -c *.coffee",
+    "watch": "coffee -w -c *.coffee",
+    "lint": "coffeelint *.coffee",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "coffeelint": "^2.1.0",
+    "coffeescript": "^2.7.0"
+  }
+}

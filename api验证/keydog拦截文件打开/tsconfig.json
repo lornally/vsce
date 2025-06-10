@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "sourceMap": true,
+    "rootDir": "src",
+    "outDir": "./dist",
+    "strict": true,
+    "moduleResolution": "Node16",
+    "typeRoots": ["node_modules/@types"]  // 移到这里
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "调试/**/*",
+    "src参考代码/**/*", 
+    "测试用例/**/*",
+    "node_modules/**/*",
+    "dist/**/*"
+  ]
+}

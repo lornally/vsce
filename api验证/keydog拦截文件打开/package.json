@@ -28,10 +28,17 @@
         "scopeName": "source.ye",
         "path": "./syntaxes/ye.tmLanguage.json"
       }],
-       "commands": [{
-        "command": "vscode.open",
-        "title": "贱狗-ye!"
-    }]
+       "customEditors": [
+            {
+                "viewType": "贱狗.编辑器",
+                "displayName": "贱狗编",
+                "selector": [
+                    {
+                        "filenamePattern": "*.ye"
+                    }
+                ]
+            }
+        ]
  
    
   },

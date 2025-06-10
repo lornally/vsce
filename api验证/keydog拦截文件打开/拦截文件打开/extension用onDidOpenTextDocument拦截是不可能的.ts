@@ -30,14 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
         })
     );
 
-   context.subscriptions.push(
-    vscode.commands.registerCommand('vscode.open', (uri) => {
-    if (uri.path.endsWith('.ye')) {
-        vscode.window.showErrorMessage('禁止打开锁文件！');
-        return; // 阻断默认打开行为
-    }
-    return vscode.commands.executeCommand('_originalOpen', uri); // 调用原始命令
-    }));
+
     
 }
 
