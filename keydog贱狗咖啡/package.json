@@ -1,8 +1,9 @@
 {
-  "name": "cofee",
-  "displayName": "cofee",
-  "description": "",
-  "version": "0.0.1",
+  "name": "ye-editor",
+  "displayName": "keydog",
+  "description": "keydog贱狗脑图",
+  "version": "1.0.0",
+  "publisher": "your-name",
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -18,6 +19,17 @@
       {
         "command": "cofee.helloWorld",
         "title": "Hello World"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "贱狗.编辑器",
+        "displayName": "贱狗编",
+        "selector": [
+          {
+            "filenamePattern": "*.ye"
+          }
+        ]
       }
     ]
   },

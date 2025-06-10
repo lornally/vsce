@@ -7,42 +7,46 @@
   "engines": {
     "vscode": "^1.78.0"
   },
-   "activationEvents": [
+  "activationEvents": [
     "onStartupFinished"
   ],
-
   "categories": [
     "Other"
   ],
-
   "main": "./dist/extension.js",
   "contributes": {
-    "languages": [{
+    "languages": [
+      {
         "id": "ye",
-        "aliases": ["YE","ye"],
-        "extensions": [".ye"],
+        "aliases": [
+          "YE",
+          "ye"
+        ],
+        "extensions": [
+          ".ye"
+        ],
         "configuration": "./language-configuration.json"
-      }],
-    "grammars": [{
+      }
+    ],
+    "grammars": [
+      {
         "language": "ye",
         "scopeName": "source.ye",
         "path": "./syntaxes/ye.tmLanguage.json"
-      }],
-       "customEditors": [
-            {
-                "viewType": "贱狗.编辑器",
-                "displayName": "贱狗编",
-                "selector": [
-                    {
-                        "filenamePattern": "*.ye"
-                    }
-                ]
-            }
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "贱狗.编辑器",
+        "displayName": "贱狗编",
+        "selector": [
+          {
+            "filenamePattern": "*.ye"
+          }
         ]
- 
-   
+      }
+    ]
   },
-
   "scripts": {
     "vscode:prepublish": "pnpm run package",
     "compile": "pnpm run check-types && pnpm run lint && node esbuild.js",
@@ -70,5 +74,4 @@
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.5.2"
   }
-
 }
