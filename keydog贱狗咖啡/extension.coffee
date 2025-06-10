@@ -63,13 +63,13 @@ resolveCustomEditor = (webviewdoc, webviewPanel) ->
 # 平铺函数2：更新 webview 内容
 
 updateWebview = (webviewPanel, webviewdoc) ->
- try
-  webviewdoc.content = await readFileAsync webviewdoc.uri.fsPath, 'utf8'
-  webviewPanel.webview.html = """
-    <h1> 贱狗只读展示, 请于分栏编辑文件: #{fname(webviewdoc.uri.fsPath)}</h1>
-    <p><small>Updated: #{new Date().toLocaleTimeString()}</small></p>
-    <pre>#{escapeHtml webviewdoc.content}</pre>
-   """
+  try
+   webviewdoc.content = await readFileAsync webviewdoc.uri.fsPath, 'utf8'
+   webviewPanel.webview.html = """
+     <h1> 贱狗只读展示, 请于分栏编辑文件: #{fname(webviewdoc.uri.fsPath)}</h1>
+     <p><small>Updated: #{new Date().toLocaleTimeString()}</small></p>
+     <pre>#{escapeHtml webviewdoc.content}</pre>
+    """
   catch error
     odog "更新 webview 失败: #{error}"
     vscode.window.showErrorMessage "更新 webview 失败: #{error}"
