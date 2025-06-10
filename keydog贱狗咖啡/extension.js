@@ -99,9 +99,9 @@
     return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
   };
 
-  processYeFile = async function(doc) {
+  processYeFile = async function(webviewdoc) {
     var error, fileId, fileName, left, leftPath, right, rightPath, tempDir;
-    fileId = doc.uri.fsPath;
+    fileId = webviewdoc.uri.fsPath;
     fileName = fname(fileId);
     odog(`处理文件: ${fileName}`);
     try {
@@ -116,7 +116,7 @@
       //     await closeEditor(doc.uri); # * 关闭重复打开的文件
       //     return;
       // }
-      [right, ...left] = doc.content.split(marker);
+      [right, ...left] = webviewdoc.content.split(marker);
       left = left.join(marker);
       // 创建临时文件
       tempDir = tmpdir();

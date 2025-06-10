@@ -79,8 +79,8 @@ escapeHtml = (text) ->
  text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;')
 
 
-processYeFile = (doc) ->
-    fileId = doc.uri.fsPath
+processYeFile = (webviewdoc) ->
+    fileId = webviewdoc.uri.fsPath
     fileName = fname fileId
     odog "处理文件: #{fileName}"
     
@@ -95,7 +95,7 @@ processYeFile = (doc) ->
     
     try 
       # 解析内容
-      [right, left...] = doc.content.split marker
+      [right, left...] = webviewdoc.content.split marker
       left = left.join marker
       # 创建临时文件
       tempDir = tmpdir()
