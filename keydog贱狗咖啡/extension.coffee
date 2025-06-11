@@ -19,6 +19,7 @@ webviewdic={}
 
 # 调试通道
 odog = null
+ddog=null
 
 activate = (context) ->
   # 创建输出通道
@@ -30,12 +31,19 @@ activate = (context) ->
     otC.appendLine "[#{time}] #{msg}"
     console.log "[贱狗#{time}]: #{msg}"
   
+  ddog = (msg) ->
+    time = new Date().toLocaleTimeString()
+    otC.appendLine "[#{time}] [调试] #{JSON.stringify(msg)
+}"
+    console.log "[贱狗#{time}][调试]: #{JSON.stringify(msg)
+}"
   odog 'KeyDog 插件已激活'
   
   disposable = vscode.commands.registerCommand 'cofee.helloWorld', ->
       vscode.window.showInformationMessage 'H道动!'
   context.subscriptions.push disposable
-  
+
+
   # 注册自定义编辑器
   cep = vscode.window.registerCustomEditorProvider '贱狗.编辑器', {openCustomDocument,resolveCustomEditor}
   context.subscriptions.push cep
@@ -43,8 +51,16 @@ activate = (context) ->
   odog '注册自定义编辑器成功'
   # 监听保存事件
   saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
+   odog '保存事件: 开始'
    fsPath = doc.uri.fsPath
-   await handlesavefile(fsPath) if fsPath of yefamily
+   odog "保存事件: path: #{fname(fsPath)}"
+   unless fsPath of yefamily
+    odog "保存事件: #{fname fsPath}, 不是贱狗文件, 跳过"
+    return
+   content=await handlesavefile(fsPath)
+   {dad} = yefamily[fsPath]
+   await updateWebview dad,content
+   odog "更新webview: #{fname dad}"
   # 只需要在插件卸载时清理一次
   context.subscriptions.push saveListener
   
@@ -52,13 +68,21 @@ activate = (context) ->
   # 全局Tab关闭事件监听
   tabCloseListener = vscode.workspace.onDidCloseTextDocument (doc) -> 
    # 处理关闭事件
-   odog "处理关闭事件: #{doc.uri.fsPath}"
-   odog "处理关闭事件yefamily[fsPath]: #{yefamily[fsPath]}"
+   odog '关闭事件: 开始'
    fsPath = doc.uri.fsPath
-   if fsPath of yefamily
-    await handlesavefile fsPath
-    await handleclose fsPath 
-  odog '注册关闭事件监听成功'
+   odog "关闭事件: path: #{fname fsPath}"
+   odog "关闭事件: yefamily[fsPath]: #{yefamily[fsPath]}"
+   unless fsPath of yefamily
+    odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
+    return
+   odog "关闭事件: 匹配字典:#{(fname i for i in Object.keys(yefamily))}"
+   # await handlesavefile fsPath
+   # await handleclose fsPath 
+  odog '关闭事件: 监听成功'
+  # 在第79行后添加这些行
+  odog "关闭事件监听器类型: #{typeof tabCloseListener}"
+  odog "监听器对象存在: #{tabCloseListener?}"
+
   
   # 注册销毁
   context.subscriptions.push tabCloseListener
@@ -69,42 +93,43 @@ deactivate = ->
 module.exports = { activate, deactivate }
 
 handlesavefile = (fsPath) ->
-  odog "保存文件开始: #{fsPath}"
+  odog "保存文件: 开始: #{fsPath}"
   {dad, brother, isright} = yefamily[fsPath]
   brocon=docdic[brother]?.getText()
   mycon=docdic[fsPath]?.getText()
   unless brocon? and mycon?
-    odog "兄弟或我的内容不存在, 无法保存"
+    odog "保存文件: 兄弟或我的内容不存在, 无法保存"
     return
   dadcon = if isright then mycon+marker+brocon  else brocon+marker+mycon
   await writeFileAsync dad, dadcon, 'utf8'
-  odog "保存文件: #{fname dad}"
-  
-  await updateWebview dad
-  odog "更新webview: #{fname dad}"
+  odog "保存文件:完成: #{fname dad}"
+  return dadcon
+
+
 
 
 
 handleclose = (fsPath) ->
  # 处理关闭事件
- odog "处理handleclose: #{fname fsPath}"
+ odog "处理handleclose开始: #{fname fsPath}"
  {dad, brother, isright} = yefamily[fsPath]
  delete yefamily[fsPath]
  delete yefamily[brother]
 
 
- closebyfspath dad
- odog "关闭父文件: #{fname dad}"
- closebyfspath brother
- odog "关闭兄弟文件: #{fname brother}"
+ await closebyfspath dad
+ odog "处理handleclose:关闭父文件: #{fname dad}"
+ await closebyfspath brother
+ odog "处理handleclose: 关闭兄弟文件: #{fname brother}"
 
 
 closebyfspath= (fspath) ->
+  odog "处理closebyfspath开始: #{fname fspath}"
   target = vscode.window.tabGroups.all
     .flatMap((group) -> group.tabs)
     .find((t) -> t.input?.uri?.fsPath == fspath)
-  vscode.window.tabGroups.close(target) if target?
-  odog "关闭文件: #{fname fspath}, 存在: #{target?}" 
+  await vscode.window.tabGroups.close(target) if target?
+  odog "处理closebyfspath完成: #{fname fspath}, 存在: #{target?}" 
 
 
 
@@ -131,18 +156,20 @@ resolveCustomEditor = (webviewdoc, webviewPanel) ->
   # * 这个也很关键, 他会自动销毁注册的listener, 哈哈哈, 完美
   # webviewPanel.onDidDispose -> saveListener.dispose()
   # 直接打开我们的分栏
-  odog 'KeyDog 可以操作了'
-  processYeFile webviewdoc
+  odog '编辑器完成, 可以操作了'
+  await processYeFile webviewdoc
+  odog "编辑器完成,处理贱狗文件完成#{yepath}"
+  odog "编辑器完成,yefamily:#{(fname i for i in Object.keys(yefamily))}"
 
 # 第一步, 更新 webview 内容, 并且赋值webviewdoc.content
 
-updateWebview = (yepath) ->
+updateWebview = (yepath, content=null) ->
   {webviewPanel, webviewdoc} = webviewdic[yepath]
   unless webviewPanel? and webviewdoc?
     odog "webviewPanel 或 webviewdoc 不存在, 无法更新"
     return
   try
-   webviewdoc.content = await readFileAsync yepath, 'utf8'
+   webviewdoc.content = if content? then content else await readFileAsync yepath, 'utf8'
    webviewPanel.webview.html = """
      <h1> 贱狗只读展示, 请于分栏编辑文件: #{fname(yepath)}</h1>
      <p><small>Updated: #{new Date().toLocaleTimeString()}</small></p>
@@ -216,6 +243,7 @@ openEditor=({filePath, viewColumn, preserveFocus}) ->
 
         odog "打开编辑器: #{fname filePath}"
         
+
     catch error
         odog "打开编辑器失败: #{fname filePath} - #{error}"
     
