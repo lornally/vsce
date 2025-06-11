@@ -1,4 +1,5 @@
 # * coffee 版本, 但是, 并未配置编译, 所以仅供参考
+# 虽然没配置, 但是也已经比ts更新了.
 vscode = require 'vscode'
 {basename: fname} = require 'path'
 
@@ -51,6 +52,9 @@ activate = (context) ->
 
     vscode.window.onDidChangeWindowState (e) ->
       odog "DidChangeWindowState: focused=#{e.focused}"
+    vscode.window.tabGroups.onDidChangeTabs (e) ->
+      odog "onDidChangeTabs: focused=#{e.closed.length}"
+
   )
 
 deactivate = ->

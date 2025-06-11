@@ -11,6 +11,10 @@ marker = '# -----昭-----'
 # ye文件映射表
 yefamily={}
 
+# doc映射表
+docdic={}
+# webview映射表
+webviewdic={}
 
 
 # 调试通道
@@ -36,10 +40,70 @@ activate = (context) ->
   cep = vscode.window.registerCustomEditorProvider '贱狗.编辑器', {openCustomDocument,resolveCustomEditor}
   context.subscriptions.push cep
   
+  odog '注册自定义编辑器成功'
+  # 监听保存事件
+  saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
+   fsPath = doc.uri.fsPath
+   await handlesavefile(fsPath) if fsPath of yefamily
+  # 只需要在插件卸载时清理一次
+  context.subscriptions.push saveListener
+  
+  odog '注册保存事件监听成功'
+  # 全局Tab关闭事件监听
+  tabCloseListener = vscode.workspace.onDidCloseTextDocument (doc) -> 
+   # 处理关闭事件
+   odog "处理关闭事件: #{doc.uri.fsPath}"
+   odog "处理关闭事件yefamily[fsPath]: #{yefamily[fsPath]}"
+   fsPath = doc.uri.fsPath
+   if fsPath of yefamily
+    await handlesavefile fsPath
+    await handleclose fsPath 
+  odog '注册关闭事件监听成功'
+  
+  # 注册销毁
+  context.subscriptions.push tabCloseListener
+
 
 deactivate = ->
 
 module.exports = { activate, deactivate }
+
+handlesavefile = (fsPath) ->
+  odog "保存文件开始: #{fsPath}"
+  {dad, brother, isright} = yefamily[fsPath]
+  brocon=docdic[brother]?.getText()
+  mycon=docdic[fsPath]?.getText()
+  unless brocon? and mycon?
+    odog "兄弟或我的内容不存在, 无法保存"
+    return
+  dadcon = if isright then mycon+marker+brocon  else brocon+marker+mycon
+  await writeFileAsync dad, dadcon, 'utf8'
+  odog "保存文件: #{fname dad}"
+  await updateWebview dad
+  odog "更新webview: #{fname dad}"
+
+
+
+handleclose = (fsPath) ->
+ # 处理关闭事件
+ odog "处理handleclose: #{fname fsPath}"
+ {dad, brother, isright} = yefamily[fsPath]
+ delete yefamily[fsPath]
+ delete yefamily[brother]
+
+
+ closebyfspath dad
+ odog "关闭父文件: #{fname dad}"
+ closebyfspath brother
+ odog "关闭兄弟文件: #{fname brother}"
+
+
+closebyfspath= (fspath) ->
+  target = vscode.window.tabGroups.all
+    .flatMap((group) -> group.tabs)
+    .find((t) -> t.input?.uri?.fsPath == fspath)
+  vscode.window.tabGroups.close(target) if target?
+  odog "关闭文件: #{fname fspath}, 存在: #{target?}" 
 
 
 
@@ -51,28 +115,35 @@ openCustomDocument = (uri) ->
 
 # 平铺函数3：处理编辑器
 resolveCustomEditor = (webviewdoc, webviewPanel) ->
+  yepath= webviewdoc.uri.fsPath
+  webviewdic[yepath]= {webviewdoc, webviewPanel}
+
   # 初始显示
-  await updateWebview webviewPanel, webviewdoc
+  await updateWebview yepath
   # 监听保存事件, 虽然每个文档都注册一遍, 但是, 他们是同一个事件.
   # *  这个可以正常使用, 直接把分栏注册在onWillSaveTextDocument就OK了.
   # * 还是拿出去更合理, 因为他其实只是更新webview展示
-  saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
-    if doc.uri.fsPath is webviewdoc.uri.fsPath
-      updateWebview webviewPanel, webviewdoc
+  # saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
+  #   if doc.uri.fsPath is webviewdoc.uri.fsPath
+  #     updateWebview webviewPanel, webviewdoc
   
   # * 这个也很关键, 他会自动销毁注册的listener, 哈哈哈, 完美
-  webviewPanel.onDidDispose -> saveListener.dispose()
+  # webviewPanel.onDidDispose -> saveListener.dispose()
   # 直接打开我们的分栏
   odog 'KeyDog 可以操作了'
   processYeFile webviewdoc
 
-# 平铺函数2：更新 webview 内容
+# 第一步, 更新 webview 内容, 并且赋值webviewdoc.content
 
-updateWebview = (webviewPanel, webviewdoc) ->
+updateWebview = (yepath) ->
+  {webviewPanel, webviewdoc} = webviewdic[yepath]
+  unless webviewPanel? and webviewdoc?
+    odog "webviewPanel 或 webviewdoc 不存在, 无法更新"
+    return
   try
-   webviewdoc.content = await readFileAsync webviewdoc.uri.fsPath, 'utf8'
+   webviewdoc.content = await readFileAsync yepath, 'utf8'
    webviewPanel.webview.html = """
-     <h1> 贱狗只读展示, 请于分栏编辑文件: #{fname(webviewdoc.uri.fsPath)}</h1>
+     <h1> 贱狗只读展示, 请于分栏编辑文件: #{fname(yepath)}</h1>
      <p><small>Updated: #{new Date().toLocaleTimeString()}</small></p>
      <pre>#{escapeHtml webviewdoc.content}</pre>
     """
@@ -84,21 +155,12 @@ updateWebview = (webviewPanel, webviewdoc) ->
 escapeHtml = (text) ->
  text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;')
 
-
+# 第二步, 处理webviewdoc.content
 processYeFile = (webviewdoc) ->
     fileId = webviewdoc.uri.fsPath
     fileName = fname fileId
     odog "处理文件: #{fileName}"
-    
-    # todo 检查是否已在处理中, 只可能是不同分栏打开同一个文件
-
-    # if (activeFiles.has(fileId)) {
-    #     odog(`文件已在编辑中: #{fileName}`);
-    #     vscode.window.showWarningMessage(`文件已在编辑中: #{fileName}`);
-    #     await closeEditor(doc.uri); # * 关闭重复打开的文件
-    #     return;
-    # }
-    
+        
     try 
       # 解析内容
       [right, left...] = webviewdoc.content.split marker
@@ -110,13 +172,13 @@ processYeFile = (webviewdoc) ->
         
       # 并行异步写入两个文件
       await Promise.all [
-        writeFileAsync leftPath, left
-        writeFileAsync rightPath, right
+        writeFileAsync leftPath, left, 'utf8'
+        writeFileAsync rightPath, right, 'utf8'
       ]
       odog "创建临时文件: #{fname(leftPath)}, #{fname(rightPath)}"
         
       # 记录活动文件
-      recordfile {dad:fileId, twin:[leftPath, rightPath]}
+      recordfile {dad:fileId, left:leftPath, right:rightPath}
                   
       # 分栏打开临时文件
       # ✅ 用数组字面量 + Promise.all
@@ -129,15 +191,16 @@ processYeFile = (webviewdoc) ->
     catch error
         odog "处理文件失败: #{fileName} - #{error}"
         vscode.window.showErrorMessage "处理文件失败: #{error}"
-    
-recordfile = ({dad,twin[s1,s2]}) ->
- yefamily[s1] ={dad, brother:s2}
- yefamily[s2] = {dad, brother:s1}
+
+# * 更新yefamily
+recordfile = ({dad,left,right}) ->
+ yefamily[left] ={dad, brother: right, isright: false}
+ yefamily[right] = {dad, brother: left, isright: true}
  # * 虽然简洁, 但是, 不如上面直白
  # yefamily[s]={dad, brother:twin[1-i] } for s,i in twin
-  # 记录活动文件
-  # activeFiles.set fileId, { leftPath, rightPath }
-  odog "记录活动文件: #{f1}, #{f2}, #{f3}"
+ # 记录活动文件
+ odog "记录活动文件: #{fname dad}, #{fname left}, #{fname right}"
+
 
 
 openEditor=({filePath, viewColumn, preserveFocus}) ->
@@ -145,6 +208,9 @@ openEditor=({filePath, viewColumn, preserveFocus}) ->
         uri = vscode.Uri.file filePath
         doc = await vscode.workspace.openTextDocument uri 
         editor = await vscode.window.showTextDocument doc, { viewColumn, preserveFocus }
+
+        # 全局docdic
+        docdic[filePath] = doc
 
 
         odog "打开编辑器: #{fname filePath}"
