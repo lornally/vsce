@@ -5,9 +5,13 @@ vscode = require 'vscode'
 { basename: fname, join: fjoin } = require 'path'
 
 
-##
-
+# 分隔符
 marker = '# -----昭-----'
+
+# ye文件映射表
+yefamily={}
+
+
 
 # 调试通道
 odog = null
@@ -51,6 +55,7 @@ resolveCustomEditor = (webviewdoc, webviewPanel) ->
   await updateWebview webviewPanel, webviewdoc
   # 监听保存事件, 虽然每个文档都注册一遍, 但是, 他们是同一个事件.
   # *  这个可以正常使用, 直接把分栏注册在onWillSaveTextDocument就OK了.
+  # * 还是拿出去更合理, 因为他其实只是更新webview展示
   saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
     if doc.uri.fsPath is webviewdoc.uri.fsPath
       updateWebview webviewPanel, webviewdoc
@@ -111,7 +116,7 @@ processYeFile = (webviewdoc) ->
       odog "创建临时文件: #{fname(leftPath)}, #{fname(rightPath)}"
         
       # 记录活动文件
-      recordfile fileId, leftPath, rightPath
+      recordfile {dad:fileId, twin:[leftPath, rightPath]}
                   
       # 分栏打开临时文件
       # ✅ 用数组字面量 + Promise.all
@@ -125,7 +130,11 @@ processYeFile = (webviewdoc) ->
         odog "处理文件失败: #{fileName} - #{error}"
         vscode.window.showErrorMessage "处理文件失败: #{error}"
     
-recordfile = (f1, f2, f3) ->
+recordfile = ({dad,twin[s1,s2]}) ->
+ yefamily[s1] ={dad, brother:s2}
+ yefamily[s2] = {dad, brother:s1}
+ # * 虽然简洁, 但是, 不如上面直白
+ # yefamily[s]={dad, brother:twin[1-i] } for s,i in twin
   # 记录活动文件
   # activeFiles.set fileId, { leftPath, rightPath }
   odog "记录活动文件: #{f1}, #{f2}, #{f3}"
@@ -135,8 +144,11 @@ openEditor=({filePath, viewColumn, preserveFocus}) ->
     try 
         uri = vscode.Uri.file filePath
         doc = await vscode.workspace.openTextDocument uri 
-        await vscode.window.showTextDocument doc, { viewColumn, preserveFocus }
+        editor = await vscode.window.showTextDocument doc, { viewColumn, preserveFocus }
+
+
         odog "打开编辑器: #{fname filePath}"
+        
     catch error
         odog "打开编辑器失败: #{fname filePath} - #{error}"
     
