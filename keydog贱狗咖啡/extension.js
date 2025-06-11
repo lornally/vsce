@@ -65,7 +65,7 @@
     // 初始显示
     await updateWebview(webviewPanel, webviewdoc);
     // 监听保存事件, 虽然每个文档都注册一遍, 但是, 他们是同一个事件.
-    // todo 未来移出去, 用一个注册表管理
+    // *  这个可以正常使用, 直接把分栏注册在onWillSaveTextDocument就OK了.
     saveListener = vscode.workspace.onDidSaveTextDocument(function(doc) {
       if (doc.uri.fsPath === webviewdoc.uri.fsPath) {
         return updateWebview(webviewPanel, webviewdoc);

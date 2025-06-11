@@ -50,11 +50,12 @@ resolveCustomEditor = (webviewdoc, webviewPanel) ->
   # 初始显示
   await updateWebview webviewPanel, webviewdoc
   # 监听保存事件, 虽然每个文档都注册一遍, 但是, 他们是同一个事件.
-  # todo 未来移出去, 用一个注册表管理
+  # *  这个可以正常使用, 直接把分栏注册在onWillSaveTextDocument就OK了.
   saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
     if doc.uri.fsPath is webviewdoc.uri.fsPath
       updateWebview webviewPanel, webviewdoc
-
+  
+  # * 这个也很关键, 他会自动销毁注册的listener, 哈哈哈, 完美
   webviewPanel.onDidDispose -> saveListener.dispose()
   # 直接打开我们的分栏
   odog 'KeyDog 可以操作了'
