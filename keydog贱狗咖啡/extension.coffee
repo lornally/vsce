@@ -79,6 +79,7 @@ handlesavefile = (fsPath) ->
   dadcon = if isright then mycon+marker+brocon  else brocon+marker+mycon
   await writeFileAsync dad, dadcon, 'utf8'
   odog "保存文件: #{fname dad}"
+  
   await updateWebview dad
   odog "更新webview: #{fname dad}"
 
