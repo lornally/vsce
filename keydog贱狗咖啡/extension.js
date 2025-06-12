@@ -35,7 +35,7 @@
   ddog = null;
 
   activate = function(context) {
-    var cep, disposable, otC, saveListener, tabCloseListener;
+    var cep, disposable, hotExitSetting, otC, saveListener, tabCloseListener;
     // 创建输出通道
     otC = vscode.window.createOutputChannel('贱狗');
     context.subscriptions.push(otC);
@@ -56,7 +56,9 @@
       return vscode.window.showInformationMessage('H道动!');
     });
     context.subscriptions.push(disposable);
-    
+    // 验证热退出
+    hotExitSetting = vscode.workspace.getConfiguration('files').get('hotExit');
+    odog(`当前热退出设置: ${hotExitSetting}`);
     // 注册自定义编辑器
     cep = vscode.window.registerCustomEditorProvider('贱狗.编辑器', {openCustomDocument, resolveCustomEditor});
     context.subscriptions.push(cep);
@@ -81,17 +83,16 @@
     odog('注册保存事件监听成功');
     // 全局Tab关闭事件监听
     tabCloseListener = vscode.workspace.onDidCloseTextDocument(function(doc) {
-      var fsPath, i;
+      var i;
       
       // 处理关闭事件
       odog('关闭事件: 开始');
-      fsPath = doc.uri.fsPath;
+      // fsPath = doc.uri.fsPath
       odog(`关闭事件: path: ${fname(fsPath)}`);
       odog(`关闭事件: yefamily[fsPath]: ${yefamily[fsPath]}`);
-      if (!(fsPath in yefamily)) {
-        odog(`关闭事件:跳过: ${fname(fsPath)}, 不是贱狗文件, 跳过`);
-        return;
-      }
+      // unless fsPath of yefamily
+      //  odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
+      //  return
       return odog(`关闭事件: 匹配字典:${(function() {
         var j, len, ref, results;
         ref = Object.keys(yefamily);
@@ -149,7 +150,7 @@
 
   closebyfspath = async function(fspath) {
     var target;
-    edog(`处理closebyfspath开始: ${fname(fspath)}`);
+    odog(`处理closebyfspath开始: ${fname(fspath)}`);
     target = vscode.window.tabGroups.all.flatMap(function(group) {
       return group.tabs;
     }).find(function(t) {
@@ -243,9 +244,12 @@
       left = left.join(marker);
       // 创建临时文件
       tempDir = tmpdir();
-      leftPath = fjoin(tempDir, `${fileName}_left.md`);
-      rightPath = fjoin(tempDir, `${fileName}_right.md`);
-      
+      // leftPath = fjoin tempDir, "#{fileName}_left.md"
+      // rightPath = fjoin tempDir, "#{fileName}_right.md"
+      leftPath = `${fileId}_left.md`;
+      rightPath = `${fileId}_right.md`;
+      // * ai说是临时目录问题. 咱们尝试下.
+
       // 并行异步写入两个文件
       await Promise.all([writeFileAsync(leftPath, left, 'utf8'), writeFileAsync(rightPath, right, 'utf8')]);
       odog(`创建临时文件: ${fname(leftPath)}, ${fname(rightPath)}`);
@@ -305,7 +309,7 @@
       editor = (await vscode.window.showTextDocument(doc, {viewColumn, preserveFocus}));
       // 全局docdic
       docdic[filePath] = doc;
-      return odog(`打开编辑器: ${fname(filePath)}`);
+      return odog(`openEditor文件状态: ${fname(filePath)}, isDirty: ${doc.isDirty}, isUntitled: ${doc.isUntitled}`);
     } catch (error1) {
       error = error1;
       return odog(`打开编辑器失败: ${fname(filePath)} - ${error}`);

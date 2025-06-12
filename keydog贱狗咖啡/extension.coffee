@@ -43,6 +43,10 @@ activate = (context) ->
       vscode.window.showInformationMessage 'H道动!'
   context.subscriptions.push disposable
 
+  # 验证热退出
+  hotExitSetting = vscode.workspace.getConfiguration('files').get('hotExit')
+  odog "当前热退出设置: #{hotExitSetting}"
+
 
   # 注册自定义编辑器
   cep = vscode.window.registerCustomEditorProvider '贱狗.编辑器', {openCustomDocument,resolveCustomEditor}
@@ -69,12 +73,12 @@ activate = (context) ->
   tabCloseListener = vscode.workspace.onDidCloseTextDocument (doc) -> 
    # 处理关闭事件
    odog '关闭事件: 开始'
-   fsPath = doc.uri.fsPath
-   odog "关闭事件: path: #{fname fsPath}"
-   odog "关闭事件: yefamily[fsPath]: #{yefamily[fsPath]}"
-   unless fsPath of yefamily
-    odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
-    return
+   # fsPath = doc.uri.fsPath
+   # odog "关闭事件: path: #{fname fsPath}"
+   # odog "关闭事件: yefamily[fsPath]: #{yefamily[fsPath]}"
+   # unless fsPath of yefamily
+   #  odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
+   #  return
    odog "关闭事件: 匹配字典:#{(fname i for i in Object.keys(yefamily))}"
    # await handlesavefile fsPath
    # await handleclose fsPath 
@@ -197,6 +201,9 @@ processYeFile = (webviewdoc) ->
       tempDir = tmpdir()
       leftPath = fjoin tempDir, "#{fileName}_left.md"
       rightPath = fjoin tempDir, "#{fileName}_right.md"
+      # leftPath =  "#{fileId}_left.md"
+      # rightPath = "#{fileId}_right.md"
+      # * ai说是临时目录问题. 咱们尝试下.
         
       # 并行异步写入两个文件
       await Promise.all [
@@ -241,7 +248,7 @@ openEditor=({filePath, viewColumn, preserveFocus}) ->
         docdic[filePath] = doc
 
 
-        odog "打开编辑器: #{fname filePath}"
+        odog "openEditor文件状态: #{fname filePath}, isDirty: #{doc.isDirty}, isUntitled: #{doc.isUntitled}"
         
 
     catch error
