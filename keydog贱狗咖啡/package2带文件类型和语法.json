@@ -20,6 +20,37 @@
         "command": "cofee.helloWorld",
         "title": "Hello World"
       }
+    ],
+    "languages": [
+      {
+        "id": "ye",
+        "aliases": [
+          "YE",
+          "ye"
+        ],
+        "extensions": [
+          ".ye"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ye",
+        "scopeName": "source.ye",
+        "path": "./syntaxes/ye.tmLanguage.json"
+      }
+    ],
+    "customEditors": [
+      {
+        "viewType": "贱狗.编辑器",
+        "displayName": "贱狗编",
+        "selector": [
+          {
+            "filenamePattern": "*.ye"
+          }
+        ]
+      }
     ]
   },
   "scripts": {

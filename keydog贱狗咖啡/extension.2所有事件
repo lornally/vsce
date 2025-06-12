@@ -69,7 +69,8 @@ activate = (context) ->
 
     vscode.window.onDidChangeWindowState (e) ->
       odog "DidChangeWindowState: focused=#{e.focused}"
-    
+    vscode.window.tabGroups.onDidChangeTabs (e) ->
+      odog "onDidChangeTabs: focused=#{e.closed.length}"
 
   )
 
@@ -107,44 +108,30 @@ activate = (context) ->
    odog "更新webview: #{fname dad}"
   # 只需要在插件卸载时清理一次
   context.subscriptions.push saveListener
+  
   odog '注册保存事件监听成功'
+  # 全局Tab关闭事件监听
+  tabCloseListener = vscode.workspace.onDidCloseTextDocument (doc) -> 
+   # 处理关闭事件
+   odog '关闭事件: 开始'
+   # fsPath = doc.uri.fsPath
+   # odog "关闭事件: path: #{fname fsPath}"
+   # odog "关闭事件: yefamily[fsPath]: #{yefamily[fsPath]}"
+   # unless fsPath of yefamily
+   #  odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
+   #  return
+   odog "关闭事件: 匹配字典:#{(fname i for i in Object.keys(yefamily))}"
+   # await handlesavefile fsPath
+   # await handleclose fsPath 
+  odog '关闭事件: 监听成功'
+  # 在第79行后添加这些行
+  odog "关闭事件监听器类型: #{typeof tabCloseListener}"
+  odog "监听器对象存在: #{tabCloseListener?}"
 
-
-  # # *全局Tab关闭事件监听, 这个没用
-  # tabCloseListener = vscode.workspace.onDidCloseTextDocument (doc) -> 
-  #  # 处理关闭事件
-  #  odog '关闭事件: 开始'
-  #  # fsPath = doc.uri.fsPath
-  #  # odog "关闭事件: path: #{fname fsPath}"
-  #  # odog "关闭事件: yefamily[fsPath]: #{yefamily[fsPath]}"
-  #  # unless fsPath of yefamily
-  #  #  odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
-  #  #  return
-  #  odog "关闭事件: 匹配字典:#{(fname i for i in Object.keys(yefamily))}"
-  #  # await handlesavefile fsPath
-  #  # await handleclose fsPath 
-  # odog '关闭事件: 监听成功'
-  # # 在第79行后添加这些行
-  # odog "关闭事件监听器类型: #{typeof tabCloseListener}"
-  # odog "监听器对象存在: #{tabCloseListener?}"
-  # 注册销毁
-  # context.subscriptions.push tabCloseListener
-  # * 注册tab变化.
-  tabCloseListener = vscode.window.tabGroups.onDidChangeTabs (e) ->
-    odog "onDidChangeTabs: focused=#{e.closed.length}"
-    for tab in e.closed
-      fp=tab.input?.uri?.fsPath
-      unless fp of yefamily
-        odog "关闭事件:跳过: #{fname fp}, "
-        odog "onDidChangeTabs 不是贱狗文件, 跳过:  - #{tab.label} (#{tab.group.viewColumn})"
-        continue
-      odog "onDidChangeTabs: #{tab.label} 分栏:(#{tab.group.viewColumn})\n  路径: #{fp}"
-
-      await handlesavefile fp
-      await handleclose fp 
   
   # 注册销毁
   context.subscriptions.push tabCloseListener
+
 
 deactivate = ->
 

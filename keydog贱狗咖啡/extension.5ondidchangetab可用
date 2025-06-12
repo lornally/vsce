@@ -1,0 +1,134 @@
+vscode = require 'vscode'
+{ basename: fname, join: fjoin } = require 'path'
+# 需要添加
+{ tmpdir } = require 'os'
+{ writeFile: writeFileAsync } = require('fs').promises
+marker = '# -----昭-----'
+endlabel='新.ya'
+
+# ye文件映射表
+yefamily={}
+
+# doc映射表
+docdic={}
+# webview映射表
+webviewdic={}
+
+
+# 调试通道
+odog = null
+ddog=null
+activate = (context) ->
+  # 创建输出通道
+  otC = vscode.window.createOutputChannel '贱狗'
+  context.subscriptions.push otC
+  
+  odog = (msg) ->
+    time = new Date().toLocaleTimeString()
+    otC.appendLine "[#{time}] #{msg}"
+    console.log "[贱狗#{time}]: #{msg}"
+  
+  ddog = (msg) ->
+    time = new Date().toLocaleTimeString()
+    otC.appendLine "[#{time}] [调试] #{JSON.stringify(msg)}"
+    console.log "[贱狗#{time}][调试]: #{JSON.stringify(msg)}"
+  odog 'KeyDog 插件已激活'
+
+  reasons = ['未知', '人工保存', '自动保存', '失焦保存']
+  
+  context.subscriptions.push(
+    vscode.workspace.onDidCloseTextDocument (doc) ->
+      odog "DidClose: #{vscode.workspace.asRelativePath doc.fileName}"
+
+    vscode.window.onDidChangeActiveTextEditor (editor) ->
+      name = editor and (if editor.document.uri.scheme is 'file' then vscode.workspace.asRelativePath(editor.document.fileName) else "[#{editor.document.uri.scheme}]") or 'none'
+      odog "DidChangeActive: #{name}"
+
+    vscode.window.onDidChangeVisibleTextEditors (es) ->
+      names = (if e.document.uri.scheme is 'file' then fname(e.document.fileName) else "[#{e.document.uri.scheme}]" for e in es).join ','
+      odog "DidChangeVisible: #{names}"
+
+    vscode.workspace.onWillSaveTextDocument (e) ->
+      odog "WillSave: #{reasons[e.reason] or e.reason}: #{vscode.workspace.asRelativePath e.document.fileName}"
+
+    vscode.workspace.onDidSaveTextDocument (doc) ->
+      odog "DidSave: #{vscode.workspace.asRelativePath doc.fileName}"
+
+    vscode.workspace.onDidOpenTextDocument (doc) ->
+      # * 在这里尝试打开文件时新建文件并打开
+      ofile doc
+      # utitlefile doc
+
+     
+
+    vscode.window.onDidChangeTextEditorViewColumn (e) ->
+      odog "DidChangeViewColumn: #{fname e.textEditor.document.fileName} -> 第#{e.textEditor.viewColumn}栏"
+
+    vscode.window.onDidChangeTextEditorOptions (e) ->
+      odog "DidChangeOptions: #{fname e.textEditor.document.fileName}"
+
+    vscode.window.onDidChangeWindowState (e) ->
+      odog "DidChangeWindowState: focused=#{e.focused}"
+
+    # * 这个可能才是该搞的.  
+    vscode.window.tabGroups.onDidChangeTabs (e) ->
+    
+      odog "onDidChangeTabs: focused=#{e.closed.length}"
+      # fsPaths = (tab.input.uri.fsPath for tab in e.closed when tab.input?.uri?.fsPath)
+
+      for tab in e.closed
+        fp=tab.input?.uri?.fsPath
+        unless fp && fp.endsWith(endlabel)
+          odog "onDidChangeTabs不是文本:  - #{tab.label} (#{tab.group.viewColumn})"
+          continue
+        odog "onDidChangeTabs: #{tab.label} 分栏:(#{tab.group.viewColumn})\n  路径: #{fp}"
+
+  )
+
+  
+  disposable = vscode.commands.registerCommand 'cofee.helloWorld', ->
+      vscode.window.showInformationMessage 'H道动!'
+  context.subscriptions.push disposable
+
+  # 验证热退出
+  hotExitSetting = vscode.workspace.getConfiguration('files').get('hotExit')
+  odog "当前热退出设置: #{hotExitSetting}"
+
+
+deactivate = ->
+
+module.exports = { activate, deactivate }
+
+openEditor=({filePath, viewColumn, preserveFocus}) ->
+  odog "openEditor打开编辑器: #{fname filePath}, viewColumn: #{viewColumn}, preserveFocus: #{preserveFocus}"
+  uri = vscode.Uri.file filePath
+  doc = await vscode.workspace.openTextDocument uri 
+  editor = await vscode.window.showTextDocument doc, { viewColumn, preserveFocus }
+
+  # 全局docdic
+  docdic[filePath] = doc
+
+
+  odog "openEditor文件状态: #{fname filePath}, isDirty: #{doc.isDirty}, isUntitled: #{doc.isUntitled}"
+  
+
+# 会延迟3分钟的open方式;
+ofile= (doc) ->
+ name = if doc.uri.scheme is 'file' then fname(doc.fileName) else "[#{doc.uri.scheme}]"
+ odog "ofile: #{name}"
+ unless doc.uri.scheme is 'file'
+   odog "ofile: 不是文件类型, 跳过处理: #{name}"
+   return
+ # 判断文件扩展名
+ 
+ if name.endsWith('.wo') or name.endsWith('.ha')
+   odog "ofile: 发现贱狗文件: #{name}"
+   np=doc.uri.fsPath+ endlabel
+   odog "ofile写入文件路径: #{np}"
+   await writeFileAsync np, 'wo的内容', 'utf8'
+
+
+   # 打开编辑器
+   await openEditor {filePath: np, viewColumn: vscode.ViewColumn.One, preserveFocus: true }
+ else
+   odog "ofile: 不是贱狗文件, 跳过处理: #{name}"

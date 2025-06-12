@@ -20,6 +20,17 @@
         "command": "cofee.helloWorld",
         "title": "Hello World"
       }
+    ],
+    "customEditors": [
+      {
+        "viewType": "贱狗.编辑器",
+        "displayName": "贱狗编",
+        "selector": [
+          {
+            "filenamePattern": "*.ye"
+          }
+        ]
+      }
     ]
   },
   "scripts": {
