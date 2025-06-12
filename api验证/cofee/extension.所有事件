@@ -43,12 +43,19 @@ activate = (context) ->
     vscode.workspace.onDidCloseTextDocument (doc) ->
       odog "DidClose: #{vscode.workspace.asRelativePath doc.fileName}"
 
+    vscode.window.onDidChangeActiveTextEditor (editor) ->
+      name = editor and (if editor.document.uri.scheme is 'file' then vscode.workspace.asRelativePath(editor.document.fileName) else "[#{editor.document.uri.scheme}]") or 'none'
+      odog "DidChangeActive: #{name}"
+
     vscode.window.onDidChangeVisibleTextEditors (es) ->
       names = (if e.document.uri.scheme is 'file' then fname(e.document.fileName) else "[#{e.document.uri.scheme}]" for e in es).join ','
       odog "DidChangeVisible: #{names}"
 
     vscode.workspace.onWillSaveTextDocument (e) ->
       odog "WillSave: #{reasons[e.reason] or e.reason}: #{vscode.workspace.asRelativePath e.document.fileName}"
+
+    vscode.workspace.onDidSaveTextDocument (doc) ->
+      odog "DidSave: #{vscode.workspace.asRelativePath doc.fileName}"
 
     vscode.workspace.onDidOpenTextDocument (doc) ->
       name = if doc.uri.scheme is 'file' then fname(doc.fileName) else "[#{doc.uri.scheme}]"
@@ -62,7 +69,8 @@ activate = (context) ->
 
     vscode.window.onDidChangeWindowState (e) ->
       odog "DidChangeWindowState: focused=#{e.focused}"
-    
+    vscode.window.tabGroups.onDidChangeTabs (e) ->
+      odog "onDidChangeTabs: focused=#{e.closed.length}"
 
   )
 
@@ -100,35 +108,29 @@ activate = (context) ->
    odog "更新webview: #{fname dad}"
   # 只需要在插件卸载时清理一次
   context.subscriptions.push saveListener
+  
   odog '注册保存事件监听成功'
+  # 全局Tab关闭事件监听
+  tabCloseListener = vscode.workspace.onDidCloseTextDocument (doc) -> 
+   # 处理关闭事件
+   odog '关闭事件: 开始'
+   # fsPath = doc.uri.fsPath
+   # odog "关闭事件: path: #{fname fsPath}"
+   # odog "关闭事件: yefamily[fsPath]: #{yefamily[fsPath]}"
+   # unless fsPath of yefamily
+   #  odog "关闭事件:跳过: #{fname fsPath}, 不是贱狗文件, 跳过"
+   #  return
+   odog "关闭事件: 匹配字典:#{(fname i for i in Object.keys(yefamily))}"
+   # await handlesavefile fsPath
+   # await handleclose fsPath 
+  odog '关闭事件: 监听成功'
+  # 在第79行后添加这些行
+  odog "关闭事件监听器类型: #{typeof tabCloseListener}"
+  odog "监听器对象存在: #{tabCloseListener?}"
 
-  # * 注册tab变化.
-  tabCloseListener = vscode.window.tabGroups.onDidChangeTabs (e) ->
-    odog "onDidChangeTabs: focused=#{e.closed.length}"
-    for tab in e.closed
-      fp=tab.input?.uri?.fsPath
-      unless fp of yefamily
-        odog "关闭事件:跳过: #{fname fp}, "
-        odog "onDidChangeTabs 不是贱狗文件, 跳过:  - #{tab.label} (#{tab.group.viewColumn})"
-        continue
-      odog "onDidChangeTabs: #{tab.label} 分栏:(#{tab.group.viewColumn})\n  路径: #{fp}"
-      await handlesavefile fp
-      await handleclose fp 
   
   # 注册销毁
   context.subscriptions.push tabCloseListener
-
-  # * 监听焦点同步
-  vscode.window.onDidChangeActiveTextEditor (editor) ->
-    name = editor and (if editor.document.uri.scheme is 'file' then vscode.workspace.asRelativePath(editor.document.fileName) else "[#{editor.document.uri.scheme}]") or 'none'
-    odog "DidChangeActive: #{name}"
-    fp=editor?.document?.uri?.fsPath
-    unless fp of yefamily
-      odog "关闭事件:跳过: #{fname fp}, "
-      return
-    odog "焦点同步: 文件获得焦点: #{fname fp}"
-    await handlefocusfile fp
-
 
 
 deactivate = ->
@@ -168,33 +170,11 @@ handleclose = (fsPath) ->
 
 closebyfspath= (fspath) ->
   odog "处理closebyfspath开始: #{fname fspath}"
-  # * 这个方案有bug, 会关闭不干净, 因为事件之间互相影响了.
-  # await vscode.window.showTextDocument(vscode.Uri.file(fspath))
-  # await vscode.commands.executeCommand('workbench.action.closeActiveEditor')
-  # * 原本的方案, 找到tab再关闭, 这个方案更稳妥
   target = vscode.window.tabGroups.all
     .flatMap((group) -> group.tabs)
     .find((t) -> t.input?.uri?.fsPath == fspath)
   await vscode.window.tabGroups.close(target) if target?
   odog "处理closebyfspath完成: #{fname fspath}, 存在: #{target?}" 
-
-
-
-handlefocusfile = (fsPath) ->
-  # 处理焦点同步事件
-  odog "处理 handlefocusfile 开始: #{fname fsPath}"
-  {brother, isright} = yefamily[fsPath]
-  viewColumn = if isright then vscode.ViewColumn.One else vscode.ViewColumn.Two
-  # 其实这个方案更稳妥....
-  # 找到兄弟tab
-  # target = vscode.window.tabGroups.all
-  #   .flatMap((group) -> group.tabs)
-  #   .find((t) -> t.input?.uri?.fsPath == brother)
-  await vscode.window.showTextDocument(vscode.Uri.file(brother), {
-    viewColumn: viewColumn
-    preserveFocus: true  # 显示但不抢焦点
-  }) # if target?
-
 
 
 
@@ -211,6 +191,15 @@ resolveCustomEditor = (webviewdoc, webviewPanel) ->
 
   # 初始显示
   await updateWebview yepath
+  # 监听保存事件, 虽然每个文档都注册一遍, 但是, 他们是同一个事件.
+  # *  这个可以正常使用, 直接把分栏注册在onWillSaveTextDocument就OK了.
+  # * 还是拿出去更合理, 因为他其实只是更新webview展示
+  # saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
+  #   if doc.uri.fsPath is webviewdoc.uri.fsPath
+  #     updateWebview webviewPanel, webviewdoc
+  
+  # * 这个也很关键, 他会自动销毁注册的listener, 哈哈哈, 完美
+  # webviewPanel.onDidDispose -> saveListener.dispose()
   # 直接打开我们的分栏
   odog '编辑器完成, 可以操作了'
   await processYeFile webviewdoc
@@ -249,7 +238,9 @@ processYeFile = (webviewdoc) ->
   tempDir = tmpdir()
   leftPath = fjoin tempDir, "#{fileName}_left.md"
   rightPath = fjoin tempDir, "#{fileName}_right.md"
-
+  # leftPath =  "#{fileId}_left.md"
+  # rightPath = "#{fileId}_right.md"
+  # * ai说是临时目录问题. 咱们尝试下.
     
   # 并行异步写入两个文件
   await Promise.all [
