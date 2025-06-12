@@ -204,15 +204,6 @@ resolveCustomEditor = (webviewdoc, webviewPanel) ->
 
   # 初始显示
   await updateWebview yepath
-  # 监听保存事件, 虽然每个文档都注册一遍, 但是, 他们是同一个事件.
-  # *  这个可以正常使用, 直接把分栏注册在onWillSaveTextDocument就OK了.
-  # * 还是拿出去更合理, 因为他其实只是更新webview展示
-  # saveListener = vscode.workspace.onDidSaveTextDocument (doc) ->
-  #   if doc.uri.fsPath is webviewdoc.uri.fsPath
-  #     updateWebview webviewPanel, webviewdoc
-  
-  # * 这个也很关键, 他会自动销毁注册的listener, 哈哈哈, 完美
-  # webviewPanel.onDidDispose -> saveListener.dispose()
   # 直接打开我们的分栏
   odog '编辑器完成, 可以操作了'
   await processYeFile webviewdoc
@@ -251,9 +242,7 @@ processYeFile = (webviewdoc) ->
   tempDir = tmpdir()
   leftPath = fjoin tempDir, "#{fileName}_left.md"
   rightPath = fjoin tempDir, "#{fileName}_right.md"
-  # leftPath =  "#{fileId}_left.md"
-  # rightPath = "#{fileId}_right.md"
-  # * ai说是临时目录问题. 咱们尝试下.
+
     
   # 并行异步写入两个文件
   await Promise.all [
