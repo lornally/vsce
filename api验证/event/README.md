@@ -1,3 +1,6 @@
+这是为了测试vscode事件的项目
+
+
 # event README
 
 This is the README for your extension "event". After writing up a brief description, we recommend including the following sections.
