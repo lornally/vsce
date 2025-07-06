@@ -2,6 +2,10 @@
 	"$schema": "vscode://schemas/color-theme",
 	"type": "dark",
 	"colors": {
+    // "editorGhostText.foreground": "#4a4a4a",
+    "editorGhostText.background": "#2D3B1F", 
+    // "editorInlayHint.foreground": "#666666",
+    "editorInlayHint.background": "#1D2A2A",
 		"activityBar.activeBorder": "#72cffeb3",
 		"activityBar.background": "#050606",
 		"activityBar.border": "#171b24",
